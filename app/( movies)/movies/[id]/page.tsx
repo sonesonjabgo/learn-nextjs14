@@ -9,11 +9,11 @@ export default function MovieDetail({
 }) {
   return (
     <div>
-      <Suspense fallback={<h1>Loading Movie Info</h1>}>
-        <MovieVideos id={id} />
-      </Suspense>
       <Suspense fallback={<h1>Loading Movie Video</h1>}>
         <MovieInfo id={id} />
+      </Suspense>
+      <Suspense>
+        <MovieVideos id={id} />
       </Suspense>
     </div>
   );
